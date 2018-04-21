@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="controllers.ControllerImpedanceCurve">
+   <children>
+      <Label layoutX="157.0" layoutY="175.0" prefHeight="13.0" prefWidth="94.0" text="ImpCurve" />
+   </children>
+</AnchorPane>

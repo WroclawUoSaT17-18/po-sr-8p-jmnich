@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="998.0" maxWidth="1485.0" minHeight="998.0" minWidth="1485.0" prefHeight="998.0" prefWidth="1485.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerSingleImpedance">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="400.0" prefWidth="400.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <LineChart fx:id="fxVoltageChart" animated="false" createSymbols="false" title="Voltage" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="2">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <LineChart fx:id="fxCurrentChart" animated="false" createSymbols="false" title="Current" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.rowSpan="2">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button fx:id="fxMeasureBtn" mnemonicParsing="false" onAction="#measureBtn" prefHeight="60.0" prefWidth="120.0" text="MEASURE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <ListView fx:id="fxVoltageList" prefHeight="336.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="35.0" />
+         </GridPane.margin>
+      </ListView>
+      <ListView fx:id="fxCurrentList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="35.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label text="Voltage Charts List" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label text="Current Charts List" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ListView fx:id="fxModeList" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="35.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label text="Mode Select" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <TableView fx:id="fxParamsSetTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="35.0" />
+         </GridPane.margin>
+      </TableView>
+      <TableView fx:id="fxParamsActualTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="2">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="35.0" />
+         </GridPane.margin>
+      </TableView>
+      <Label text="Measurement Parameters - Set Values" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Measurement Parameters - Actual Values" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="fxParamsNameField" promptText="&lt;Enter your file name without .mobi_param&gt;">
+               <VBox.margin>
+                  <Insets bottom="12.0" left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="fxParametersDataBaseField">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="12.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <children>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="fxSaveParamsBtn" mnemonicParsing="false" onAction="#saveParamsBtn" prefHeight="40.0" prefWidth="180.0" text="Save parameters">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </Separator>
+            <Button fx:id="fxParamDatabaseSelectBtn" mnemonicParsing="false" onAction="#paramDatabaseSelectBtn" prefHeight="40.0" prefWidth="180.0" text="Select parameters database">
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children></VBox>
+      <ListView fx:id="fxParameterSetsList" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" GridPane.rowSpan="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="35.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label text="Parameter Sets" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+         <children>
+            <Button fx:id="fxLoadParamsBtn" alignment="CENTER" mnemonicParsing="false" onAction="#loadParamsBtn" prefHeight="40.0" prefWidth="120.0" text="Load Parametes">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="fxDeleteParamsBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteParamsBtn" prefHeight="40.0" prefWidth="120.0" text="Delete parameters">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <ListView fx:id="fxMeasurementList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="35.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label text="Measurements List" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <GridPane GridPane.columnIndex="3" GridPane.rowIndex="5">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="0.0" prefWidth="0.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="477.0" minWidth="10.0" prefWidth="428.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="218.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="fxMeasurementNameField" promptText="&lt;Enter your file name without extension&gt;" GridPane.columnIndex="1" />
+            <TextField fx:id="fxMeasDataBaseField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="fxSaveMeasurement" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#saveMeasurementBtn" prefHeight="30.0" prefWidth="180.0" text="Save measurement" GridPane.columnIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="fxSelectMeasWorkspace" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#selectMeasWorkspaceBtn" prefHeight="30.0" prefWidth="180.0" text="Select  meas. workspace" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="fxDeleteMeasBtn" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#deleteMeasurementBtn" prefHeight="30.0" prefWidth="180.0" text="Delete measurement" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <Button fx:id="fxNewMeasBtn" mnemonicParsing="false" onAction="#newMeasBtn" prefHeight="60.0" prefWidth="262.0" text="NEW MEASUREMENT" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</GridPane>
