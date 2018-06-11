@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerContextButtons">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cube.png" />
+         </image>
+         <VBox.margin>
+            <Insets left="2.0" top="10.0" />
+         </VBox.margin>
+      </ImageView>
+      <ToggleButton fx:id="btnComm" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnCommunication" prefHeight="40.0" prefWidth="100.0" selected="true" text="Comm">
+         <VBox.margin>
+            <Insets bottom="20.0" left="2.0" top="10.0" />
+         </VBox.margin>
+      </ToggleButton>
+      <ToggleButton fx:id="btnMaintenance" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnMaintenance" prefHeight="40.0" prefWidth="100.0" text="Maintenance">
+         <VBox.margin>
+            <Insets bottom="20.0" left="2.0" />
+         </VBox.margin>
+      </ToggleButton>
+      <ToggleButton fx:id="btnCurrentMeas" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnCurrentMeas" prefHeight="40.0" prefWidth="100.0" text="nA">
+         <VBox.margin>
+            <Insets bottom="20.0" left="2.0" />
+         </VBox.margin>
+      </ToggleButton>
+      <ToggleButton fx:id="btnImpSingle" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnImpSingle" prefHeight="40.0" prefWidth="100.0" text="Imp - single">
+         <VBox.margin>
+            <Insets bottom="20.0" left="2.0" />
+         </VBox.margin>
+      </ToggleButton>
+      <ToggleButton fx:id="btnImpCurve" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#btnImpCurve" prefHeight="40.0" prefWidth="100.0" text="Imp - curve">
+         <VBox.margin>
+            <Insets bottom="10.0" left="2.0" />
+         </VBox.margin>
+      </ToggleButton>
+   </children>
+</VBox>

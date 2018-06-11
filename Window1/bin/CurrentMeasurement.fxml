@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane minHeight="600.0" prefHeight="365.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerCurrentMeas">
+   <children>
+      <Label layoutX="157.0" layoutY="175.0" prefHeight="13.0" prefWidth="94.0" text="CurrMeas" />
+   </children>
+</AnchorPane>
+
